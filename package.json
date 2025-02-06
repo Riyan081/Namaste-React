@@ -2,7 +2,6 @@
   "name": "namaste-react",
   "version": "1.0.0",
   "description": "This is Namaste React by Akshay Saini",
- 
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
@@ -14,17 +13,24 @@
   "author": "Riyan Ansar",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.13.3",
-    "process": "^0.11.10"
+    "autoprefixer": "^10.4.20",
+    "parcel": "^2.0.0",
+    "postcss": "^8.5.1",
+    "process": "^0.11.10",
+    "tailwindcss": "^4.0.0"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "@reduxjs/toolkit": "^2.5.1",
+    "@tailwindcss/postcss": "^4.0.0",
+    "package_name": "^1.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-redux": "^9.2.0",
+    "react-router": "^7.1.1",
+    "react-router-dom": "^6.4.0",
+    "run": "^1.5.0"
   },
-
-  "browserlist":[
- "last 2 versions"
-]
+  "browserlist": [
+    "last 2 versions"
+  ]
 }
-
-

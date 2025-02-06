@@ -9,10 +9,6 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Grocery from "./components/Grocery";
-import UserContext from "./utils/UserContext";
-import {useState, useContext,useEffect} from "react";
-import { Provider } from "react-redux";
-import appStore from "./utils/appStore";
 
 //chuncking
 //Code splitting 
@@ -22,25 +18,11 @@ const Grocery = lazy(()=>import("./components/Grocery"));//when we call this thi
 
 
 const AppLayout = () => {
-
-  const[userName, setUserName] = useState();
-
-  //authentication
-  useEffect(()=>{
-  const data = {
-    name:"Goto Ryuji",
-  };
-  setUserName(data.name);
-  },[]);
   return (
-    <Provider store={appStore}>  
-     <UserContext.Provider value={{loggedInUser:userName,setUserName}}>
     <div className="app">
       <Header/>
      <Outlet/> {/*this outlet will be filled with je bhe slash ke aage hai  */}
     </div>
-    </UserContext.Provider>
-    </Provider> 
   );
 };
 

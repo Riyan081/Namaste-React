@@ -1,4 +1,4 @@
-import React, {lazy, Suspense} from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -8,39 +8,16 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
-import Grocery from "./components/Grocery";
-import UserContext from "./utils/UserContext";
-import {useState, useContext,useEffect} from "react";
-import { Provider } from "react-redux";
-import appStore from "./utils/appStore";
 
-//chuncking
-//Code splitting 
-//lazy loading
 
-const Grocery = lazy(()=>import("./components/Grocery"));//when we call this this comes but react is so fast that it already renderd and it donot execute it and throw error so we use suspense
 
 
 const AppLayout = () => {
-
-  const[userName, setUserName] = useState();
-
-  //authentication
-  useEffect(()=>{
-  const data = {
-    name:"Goto Ryuji",
-  };
-  setUserName(data.name);
-  },[]);
   return (
-    <Provider store={appStore}>  
-     <UserContext.Provider value={{loggedInUser:userName,setUserName}}>
     <div className="app">
       <Header/>
      <Outlet/> {/*this outlet will be filled with je bhe slash ke aage hai  */}
     </div>
-    </UserContext.Provider>
-    </Provider> 
   );
 };
 
@@ -65,10 +42,6 @@ const appRouter = createBrowserRouter([
       {
         path:"/restaurants/:resId",
         element : <RestaurantMenu/>,
-      },
-      {
-        path:"/grocery",
-        element : <Suspense fallback={<h1>hi gigga</h1>}><Grocery/></Suspense>,
       },
     ],
     errorElement:<Error/>,

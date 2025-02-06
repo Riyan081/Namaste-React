@@ -15,20 +15,17 @@ const RestaurantCard = (props) => {
     </div>
   );
 };
-
-//create Higher Order Component
-//input - RestaurantCard => restocardpromoted
-
-export const withPromotedLabel = (RestorantCard) => {
- return(props) =>{
-  return(
+const resto =  () =>{
+return (
 <div>
-  <label className=" absolute bg-black text-white m-1 p-1 rounded-lg">Somthing</label>
-  <RestaurantCard {...props}/>
+  <h1>hi</h1>
+  <h2>hello world</h2>
+
+  <h4>I am doing some try and error shit tbh </h4>
+  <h4>Hello i am leonel messi and i am best player int the world dont you know that bitvh </h4>
+  <k>what does this tab do can you tell me this hnn plz tell me </k>
 </div>
+);
+}
 
-  );
- };
-
-};
 export default RestaurantCard;
